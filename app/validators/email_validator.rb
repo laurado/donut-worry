@@ -1,6 +1,6 @@
 require 'mail'
 class EmailValidator < ActiveModel::EachValidator
-  def validate_each(record,attribute,value)
+  def validate_each(record, attribute, value)
     begin
       m = Mail::Address.new(value)
       # We must check that value contains a domain, the domain has at least
