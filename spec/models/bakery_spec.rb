@@ -1,7 +1,7 @@
-require 'spec_helper'
+# require 'spec_helper'
 require 'rails_helper'
 
-describe Bakery do
+describe Bakery, type: :model do
   it { should have_many :reviews }
 
   it { should have_valid(:name).when('Union Square Donuts', 'Dunkin Donuts') }
