@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   mount_uploader :profile_photo, ProfilePhotoUploader
+  has_many :reviews
+  has_many :bakeries, through: :reviews
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, email: true

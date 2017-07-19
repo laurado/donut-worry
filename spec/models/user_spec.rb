@@ -1,7 +1,8 @@
 require 'rails_helper'
-require 'spec_helper'
 
 RSpec.describe User, type: :model do
+  it { should have_many :reviews }
+  
   it { should have_valid(:first_name).when('Patrick', 'Colin')  }
   it { should_not have_valid(:first_name).when(nil, '') }
 

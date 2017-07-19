@@ -17,6 +17,10 @@
 /yarn-error.log
 /coverage
 /public/uploads
+/app/assets/javascripts/bundle.js
+/react/coverage
 
 .byebug_history
 .env
+/public/packs
+/node_modules
