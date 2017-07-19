@@ -8,8 +8,7 @@ feature "Authenticated user can update their profile information" do
     password: 'JackieIsMyMom',
     profile_photo: "http://i.imgur.com/jluf593.jpg",
     email: 'JackAttack16@email.com'
-    )
-  }
+  )}
   scenario "Authenticated user updates their profile information" do
     visit root_path
 

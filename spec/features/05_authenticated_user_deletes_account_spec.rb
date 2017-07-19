@@ -6,8 +6,7 @@ feature "Authenticated users can delete their account" do
     last_name: 'Ma', password: 'JackieIsMyMom',
     profile_photo: "http://i.imgur.com/jluf593.jpg",
     email: 'JackAttack16@gmail.com'
-    )
-  }
+  )}
   scenario "user deletes account successfully" do
     visit new_user_session_path
     fill_in "Password", with: "JackieIsMyMom"

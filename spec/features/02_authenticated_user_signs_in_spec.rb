@@ -3,11 +3,11 @@ require "rails_helper"
 feature "Authenticated user can sign in" do
   scenario "Authenticated user signs in successfully" do
     User.create(
-    first_name: 'Jackie',
-    last_name: 'Ma',
-    password: 'JackieIsMyMom',
-    profile_photo: "http://i.imgur.com/jluf593.jpg",
-    email: 'JackieIsMyMom@email.com'
+      first_name: 'Jackie',
+      last_name: 'Ma',
+      password: 'JackieIsMyMom',
+      profile_photo: "http://i.imgur.com/jluf593.jpg",
+      email: 'JackieIsMyMom@email.com'
     )
     visit new_user_session_path
     expect(page).to have_content "Log in"
