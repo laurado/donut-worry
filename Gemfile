@@ -5,8 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'devise'
 gem "carrierwave"
+gem 'devise'
 gem 'mini_magick', '~> 4.3'
 # gem 'rmagick', '~> 2.16.0'
 gem 'rails', '~> 5.1.2'

@@ -1,5 +1,4 @@
 class ProfilePhotoUploader < CarrierWave::Uploader::Base
-
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
@@ -49,5 +48,4 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
   # version :resized do
   #   process :resize_to_fit => [100, 100]
   # end
-
 end
