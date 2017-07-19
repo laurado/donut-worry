@@ -1,13 +1,4 @@
 require "rails_helper"
-# As a prospective user
-# I want to create an account
-# So that I can post new bakeries and review them
-
-# [] A new user must have a username and password. They can optionally have a profile image.
-# [] Clicking the sign up link brings the new user to a page to create a new account.
-# [] Visiting the `/users/new` path should display a form for creating a new user account.
-# [] After creating a new profile, if I fill out the form correctly, I should see the page displaying all the bakeries.
-# [] When creating a new profile, if I fill out the incorrectly, I should see the partially filled out form with associated error messages.
 
 feature "New users can create an account" do
   scenario "New user creates account successfully" do

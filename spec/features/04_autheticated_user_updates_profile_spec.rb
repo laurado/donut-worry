@@ -1,15 +1,13 @@
 require "rails_helper"
 
-# As an authenticated user
-# I want to update my information
-# So that I can keep my profile up to date
-
-# [] Clicking the update profile link, brings the user to a form to update their profile information (with current information in the fields).
-# [] When signed in, a user can update their profile information (username, profile picture, password, email).
-
 feature "Authenticated user can update their profile information" do
 
-  let!(:jackie) { User.create(first_name: 'Jackie', last_name: 'Ma', password: 'JackieIsMyMom', profile_photo: "http://i.imgur.com/jluf593.jpg", email: 'JackAttack16@email.com') }
+  let!(:jackie) { User.create(first_name: 'Jackie',
+    last_name: 'Ma',
+    password: 'JackieIsMyMom',
+    profile_photo: "http://i.imgur.com/jluf593.jpg",
+    email: 'JackAttack16@email.com')
+  }
   scenario "Authenticated user updates their profile information" do
     visit root_path
 
