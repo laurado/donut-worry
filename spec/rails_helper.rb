@@ -57,6 +57,7 @@ RSpec.configure do |config|
 end
 require "capybara/rails"
 require "valid_attribute"
+require 'carrierwave/orm/activerecord'
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods

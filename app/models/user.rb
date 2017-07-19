@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :profile_photo, ProfilePhotoUploader
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, email: true
@@ -11,4 +12,9 @@ class User < ApplicationRecord
     :rememberable,
     :trackable,
     :validatable
+
+  # def admin?
+  #   role == "admin"
+  # end
+
 end
