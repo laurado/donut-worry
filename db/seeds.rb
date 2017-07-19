@@ -19,9 +19,3 @@ review2 = Review.create(rating: 1, description: "This bakery is very low-energy.
 review3 = Review.create(rating: 2, description: "FAKE BAKERY!" , votes: 1, bakery: bakery2)
 
 review4 = Review.create(rating: 3, description: "Make America Bake Again!" , votes: 10, bakery: bakery3)
-
-user1 = User.create(username: , email: , )
-
-user2 =
-
-user3 =
