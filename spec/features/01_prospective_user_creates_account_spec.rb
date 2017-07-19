@@ -12,7 +12,7 @@ feature "New users can create an account" do
     fill_in "Password confirmation", with: "JackieIsMyMom"
     fill_in "Email", with: "JackieIsMyMom@email.com"
     attach_file "Profile photo",
-    "#{Rails.root}/spec/support/images/featmeme.jpg"
+      "#{Rails.root}/spec/support/images/featmeme.jpg"
 
     click_button "Sign up"
 
