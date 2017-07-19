@@ -4,14 +4,7 @@ class BakeryShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      bakery: {
-        name: "Union Square Donuts",
-        address: "20 Bow Street",
-        city: "Somerville",
-        state: "MA",
-        zip: "02142",
-        description: "This place has the best donuts, trust me. All the other donut shops are fake donut shops. SAD!"
-      }
+      bakery: {}
     }
   }
 

@@ -14,14 +14,8 @@ bakery3 = Bakery.create(name: "Tatte", address: "70 Charles Street", city: "Bost
 
 review1 = Review.create(rating: 5, description: "This is the best bakery, trust me. We win sooo many donuts. It's yuge." , votes: 1, bakery: bakery1)
 
-# review2 = Review.create(rating: 1, description: "This bakery is very low-energy. SAD!" , votes: 5, bakery: bakery1)
-#
-# review3 = Review.create(rating: 2, description: "FAKE BAKERY!" , votes: 1, bakery: bakery2)
-#
-# review4 = Review.create(rating: 3, description: "Make America Bake Again!" , votes: 10, bakery: bakery3)
-#
-# user1 = User.create(username: , email: , )
-#
-# user2 =
-#
-# user3 =
+review2 = Review.create(rating: 1, description: "This bakery is very low-energy. SAD!" , votes: 5, bakery: bakery1)
+
+review3 = Review.create(rating: 2, description: "FAKE BAKERY!" , votes: 1, bakery: bakery2)
+
+review4 = Review.create(rating: 3, description: "Make America Bake Again!" , votes: 10, bakery: bakery3)
