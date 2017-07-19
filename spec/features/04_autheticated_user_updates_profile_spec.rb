@@ -8,7 +8,7 @@ require "rails_helper"
 # [] When signed in, a user can update their profile information (username, profile picture, password, email).
 
 feature "Authenticated user can update their profile information" do
-  let!(:jackie) { User.create(first_name: 'Jackie', last_name: 'Ma', password: 'JackieIsMyMom', profile_photo: "http://i.imgur.com/jluf593.jpg", email: 'JackAttack16@email.com')}
+  let!(:jackie) { User.create(first_name: 'Jackie', last_name: 'Ma', password: 'JackieIsMyMom', profile_photo: "http://i.imgur.com/jluf593.jpg", email: 'JackAttack16@email.com') }
   scenario "Authenticated user updates their profile information" do
     visit root_path
 
@@ -20,7 +20,6 @@ feature "Authenticated user can update their profile information" do
     click_button "Log in"
 
     click_on "Edit Profile"
-
 
     expect(page).to have_content "Edit Profile"
     expect(page).to have_content "First name"
@@ -34,8 +33,6 @@ feature "Authenticated user can update their profile information" do
     expect(page).to have_field("First name", with: jackie.first_name)
     expect(page).to have_field("Last name", with: jackie.last_name)
     expect(page).to have_field("Email", with: jackie.email)
-
-
 
     click_button "Update"
 
