@@ -2,12 +2,15 @@ require 'rails_helper'
 
 feature "Authenticated users can delete their account" do
 
-  let!(:jackie) { User.create(first_name: 'Jackie',
-    last_name: 'Ma', password: 'JackieIsMyMom',
-    profile_photo: "http://i.imgur.com/jluf593.jpg",
-    email: 'JackAttack16@gmail.com'
+  let!(:jackie) do
+    User.create(
+      first_name: 'Jackie',
+      last_name: 'Ma',
+      password: 'JackieIsMyMom',
+      profile_photo: "http://i.imgur.com/jluf593.jpg",
+      email: 'JackAttack16@gmail.com'
     )
-  }
+  end
   scenario "user deletes account successfully" do
     visit new_user_session_path
     fill_in "Password", with: "JackieIsMyMom"

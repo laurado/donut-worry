@@ -5,4 +5,10 @@ Rails.application.routes.draw do
   resources :users
 
   resources :bakeries, only: [:index, :show]
+
+  namespace :api do
+    namespace :v1 do
+      resources :bakeries, only: [:index, :create]
+    end
+  end
 end
