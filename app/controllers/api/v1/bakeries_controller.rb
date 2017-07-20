@@ -7,6 +7,6 @@ class Api::V1::BakeriesController < ApplicationController
     bakery = Bakery.find(params[:id])
     reviews = bakery.reviews.order(created_at: :desc)
 
-    render json: {bakery: bakery, reviews: reviews}, adapter: :json
+    render json: { bakery: bakery, reviews: reviews }, adapter: :json
   end
 end
