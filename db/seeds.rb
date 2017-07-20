@@ -34,31 +34,31 @@ bakery3 = Bakery.create(
   "/v2Q-p3MGqFs/s1600/IMG_0331.jpg"
 )
 
-Review.create(
-  rating: 5,
-  description: "This is the best bakery, trust me. We win sooo many donuts."\
-  " It's yuge.",
-  votes: 1,
-  bakery: bakery1
-)
-
-Review.create(
-  rating: 1,
-  description: "This bakery is very low-energy. SAD!",
-  votes: 5,
-  bakery: bakery1
-)
-
-Review.create(
-  rating: 2,
-  description: "FAKE BAKERY!",
-  votes: 1,
-  bakery: bakery2
-)
-
-Review.create(
-  rating: 3,
-  description: "Make America Bake Again!",
-  votes: 10,
-  bakery: bakery3
-)
+# Review.create(
+#   rating: 5,
+#   description: "This is the best bakery, trust me. We win sooo many donuts."\
+#   " It's yuge.",
+#   votes: 1,
+#   bakery: bakery1
+# )
+#
+# Review.create(
+#   rating: 1,
+#   description: "This bakery is very low-energy. SAD!",
+#   votes: 5,
+#   bakery: bakery1
+# )
+#
+# Review.create(
+#   rating: 2,
+#   description: "FAKE BAKERY!",
+#   votes: 1,
+#   bakery: bakery2
+# )
+#
+# Review.create(
+#   rating: 3,
+#   description: "Make America Bake Again!",
+#   votes: 10,
+#   bakery: bakery3
+# )
