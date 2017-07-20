@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :profile_photo, ProfilePhotoUploader
   has_many :reviews
   has_many :bakeries, through: :reviews
 
@@ -14,4 +15,8 @@ class User < ApplicationRecord
     :rememberable,
     :trackable,
     :validatable
+
+  # def admin?
+  #   role == "admin"
+  # end
 end

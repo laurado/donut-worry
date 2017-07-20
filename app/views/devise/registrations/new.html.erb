@@ -1,15 +1,15 @@
-<h2>Sign up</h2>
+<h2>Sign Up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.first_name_field :first_name, autofocus: true %>
+    <%= f.label :first_name, 'First Name'%><br />
+    <%= f.text_field :first_name, autofocus: true %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.last_name_field :last_name, autofocus: true %>
+    <%= f.label :last_name, 'Last Name' %><br />
+    <%= f.text_field :last_name, autofocus: true %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
@@ -28,6 +28,12 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+  <div class="field">
+    <%= f.label :profile_photo , 'Profile photo'%><br />
+    <%= f.file_field :profile_photo %>
+  </div>
+
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>
