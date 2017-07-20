@@ -8,6 +8,10 @@ class BakeryShowContainer extends Component {
     }
   }
 
+  componentDidMount() {
+    
+  }
+
   render() {
     return (
       <div>
