@@ -20,3 +20,4 @@ ratings:
   - "**.rb"
 exclude_paths:
 - "app/assets/javascripts/bundle.js"
+- "spec/rails_helper.rb"
