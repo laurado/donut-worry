@@ -28,7 +28,6 @@ class BakeriesIndexContainer extends Component {
 
     return (
       <div>
-        <hr/>
         {bakeries}
       </div>
     )

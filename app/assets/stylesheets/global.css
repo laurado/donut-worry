@@ -1,0 +1,12 @@
+h1 {
+  text-align:center;
+}
+
+h4 {
+  float: right;
+}
+
+.show-image {
+  width: 20%;
+  height: auto;
+}
