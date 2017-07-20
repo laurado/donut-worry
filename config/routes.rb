@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   resources :users
 
-  resources :bakeries, only: [:index] do
+  resources :bakeries, only: [:index, :show] do
     resources :reviews, only: [:index]
+
+  namespace :api do
+    namespace :v1 do
+      resources :bakeries, only: [:index, :create]
+    end
   end
 end
