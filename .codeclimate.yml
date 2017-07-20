@@ -12,6 +12,7 @@ engines:
     config:
       languages:
       - ruby:
+        mass_threshold: 25
       - javascript:
 ratings:
   paths:
