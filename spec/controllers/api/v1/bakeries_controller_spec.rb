@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::BakeriesController, type: :controller do
 
-  let!(:first_bakery) { Bakery.create(
+  let!(:first_bakery) do Bakery.create(
     name: "Union Square Donuts",
     address: "20 Bow Street",
     city: "Somerville",
@@ -11,9 +11,9 @@ RSpec.describe Api::V1::BakeriesController, type: :controller do
     zip: "02143",
     description: "Cult donut-maker offers unique sweet and savory flavors, pastries, and java in modern wood-clad digs",
     img_url: "http://static1.squarespace.com/static/51dacd5be4b0a4195e57886a/t/54622df0e4b0719cb5b6638a/1415720432271/USDlogo.png?format=1000w")
-  }
+  end
 
-  let!(:second_bakery) { Bakery.create(
+  let!(:second_bakery) do Bakery.create(
     name: "Something Sweet Without Wheat",
     address: "19 6th Road",
     city: "Woburn",
@@ -21,7 +21,7 @@ RSpec.describe Api::V1::BakeriesController, type: :controller do
     zip: "01801",
     description: "Snug colorful bakeshop lures locals with its range of homemade, gluten-free, and vegan desserts",
     img_url: "http://3.bp.blogspot.com/-sV8nvQ4Gdp4/TjrLSxQDz3I/AAAAAAAAAA4/CGBF679SyTU/s860/new%2Bblog%2Bpic.jpg")
-  }
+  end
 
   describe "GET#index" do
     it "should return a list of all the bakeries" do
