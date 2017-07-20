@@ -3,4 +3,10 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   resources :bakeries, only: [:index, :show]
+
+  namespace :api do
+    namespace :v1 do
+      resources :bakeries, only: [:index, :create]
+    end
+  end
 end
