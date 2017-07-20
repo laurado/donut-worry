@@ -8,11 +8,10 @@ engines:
   csslint:
     enabled: true
   duplication:
-    enabled: true
+    enabled: false
     config:
       languages:
       - ruby:
-        mass_threshold: 21
       - javascript:
 ratings:
   paths:
