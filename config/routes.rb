@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   resources :users
 
-  resources :bakeries, only: [:index, :show]
+  resources :bakeries, only: [:index] do
+    resources :reviews, only: [:index]
+  end
 end

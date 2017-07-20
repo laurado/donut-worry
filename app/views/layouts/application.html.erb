@@ -15,7 +15,11 @@
     <% end %>
     <div class="row">
       <div class="small-12 columns">
-
+        <div>
+          <img><%= image_tag("Donut_Worry.png", :size => "150x150") %></img>
+          <h1>Donut Worry, Be Happy</h1>
+        </div>
+        <div class="signs">
         <% if current_user %>
           Welcome <%= current_user.first_name %>!
 
@@ -30,7 +34,7 @@
           <h4 class="log_in">You are not logged in  <%= link_to "Log In", new_user_session_path, method: :get %>
           <%= link_to "Sign Up", new_user_registration_path, method: :get %><h4>
         <% end %>
-        <h1>Donut Worry, Be Happy</h1>
+      </div>
       </div>
     </div>
     <%= yield %>

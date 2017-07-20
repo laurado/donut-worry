@@ -22,9 +22,9 @@ class BakeriesIndexContainer extends Component {
 
     return (
       <div>
-        <h1>Donut Worry, Be Happy!</h1>
         <hr/>
         {bakeries}
+        <h1>Testing testing 1 2 3</h1>
       </div>
     )
   }
