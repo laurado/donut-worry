@@ -20,7 +20,8 @@ feature "New users can create an account" do
     expect(page).to have_content "Donut Worry"
   end
 
-  scenario "New user does not provide proper information to create a new account" do
+  scenario "New user does not provide proper information to create"\
+  " a new account" do
 
     visit new_user_registration_path
     expect(page).to have_content "Sign Up"
