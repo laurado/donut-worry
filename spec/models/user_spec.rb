@@ -9,13 +9,14 @@ RSpec.describe User, type: :model do
   it { should_not have_valid(:last_name).when(nil, '') }
 
   it { should have_valid(:email).when('user@example.com', 'another@gmail.com') }
-  it do should_not have_valid(:email).when(
-    nil,
-    '',
-    'duh',
-    'apple@sauce',
-    'something.com'
-  )
+  it do
+    should_not have_valid(:email).when(
+      nil,
+      '',
+      'duh',
+      'apple@sauce',
+      'something.com'
+    )
   end
 
   it 'has a matching password confirmation for the password' do
