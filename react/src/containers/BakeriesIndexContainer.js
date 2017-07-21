@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BakeryTile from '../components/BakeryTile';
+import FormContainer from './FormContainer';
 
 class BakeriesIndexContainer extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class BakeriesIndexContainer extends Component {
   }
 
   addNewBakery(formPayload) {
+    debugger;
     fetch('/api/v1/bakeries', {
       method: 'POST',
       body: JSON.stringify(formPayload)
@@ -37,7 +39,6 @@ class BakeriesIndexContainer extends Component {
         <BakeryTile
           key={bakery.id}
           bakery={bakery}
-          addNewBakery={addNewBakery}
         />
       )
     })

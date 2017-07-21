@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TextField from '../components/TextField'
 
 class FormContainer extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class FormContainer extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleClearForm = this.handleClearForm.bind(this);
   }
 
   handleChange(event) {
@@ -52,48 +54,49 @@ class FormContainer extends Component {
   };
 
   render() {
+
     return (
       <form className="callout" onSubmit={this.handleFormSubmit}>
         <TextField
           content={this.state.name}
           label="Name"
-          name="Name"
+          name="name"
           handleChange={this.handleChange}
         />
         <TextField
           content={this.state.address}
           label="Address"
-          name="Address"
+          name="address"
           handleChange={this.handleChange}
         />
         <TextField
           content={this.state.city}
           label="City"
-          name="City"
+          name="city"
           handleChange={this.handleChange}
         />
         <TextField
           content={this.state.state}
           label="State"
-          name="State"
+          name="state"
           handleChange={this.handleChange}
         />
         <TextField
           content={this.state.zip}
           label="Zip"
-          name="Zip"
+          name="zip"
           handleChange={this.handleChange}
         />
         <TextField
           content={this.state.description}
           label="Description"
-          name="Description"
+          name="description"
           handleChange={this.handleChange}
         />
         <TextField
           content={this.state.img_url}
           label="Image"
-          name="Image"
+          name="img_url"
           handleChange={this.handleChange}
         />
         <div className="button-group">
