@@ -3,9 +3,9 @@ import React from 'react';
 const BakeryTile = (props) => {
   return(
     <div>
-      <h3>{props.bakery.name}</h3>
-      <h4>{props.bakery.address}, {props.bakery.city} {props.bakery.state}, {props.bakery.zip}</h4>
-      <p>{props.bakery.description}</p>
+      <h3>{props.name}</h3>
+      <h4>{props.address}, {props.city}, {props.state} {props.zip}</h4>
+      <p>{props.description}</p>
     </div>
   )
 }
