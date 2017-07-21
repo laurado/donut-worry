@@ -6,7 +6,12 @@ h4 {
   float: right;
 }
 
-.show-image {
+.index-image {
   width: 20%;
+  height: auto;
+}
+
+.show-image {
+  width: 50%;
   height: auto;
 }

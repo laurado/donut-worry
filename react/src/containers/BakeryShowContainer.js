@@ -29,6 +29,7 @@ class BakeryShowContainer extends Component {
       <div>
         <hr></hr>
         <h1>{this.state.bakery.name}</h1>
+        <img className='show-image' src={this.state.bakery.img_url} alt={this.state.bakery.name}></img>
         <h5>{this.state.bakery.address}, {this.state.bakery.city} {this.state.bakery.state}, {this.state.bakery.zip}</h5>
         <p>{this.state.bakery.description}</p>
       </div>

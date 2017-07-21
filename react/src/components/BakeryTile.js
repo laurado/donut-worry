@@ -8,7 +8,7 @@ const BakeryTile = (props) => {
         <div className="callout">
           <div className='row'>
             <div className='small-2 columns'>
-              <img className='show-image' src={props.bakery.img_url} alt={props.bakery.name}></img>
+              <img className='index-image' src={props.bakery.img_url} alt={props.bakery.name}></img>
             </div>
             <div className='small-8 columns'>
               <h3>{props.bakery.name}</h3>
