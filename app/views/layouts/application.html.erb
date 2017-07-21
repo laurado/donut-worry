@@ -16,27 +16,27 @@
     <% end %>
     <div class="row">
       <div class="small-12 columns">
-        <div>
-          <img><%= image_tag("Donut_Worry.png", :size => "150x150") %></img>
-          <h1>Donut Worry, Be Happy</h1>
-        </div>
-          <div class="signs">
-          <% if current_user %>
-            Welcome <%= current_user.first_name %>!
-            <% if current_user.profile_photo == nil %>
-              <% current_user.profile_photo = "/uploads/user/profile_photo/75/featmeme.jpg" %>
-            <% else %>
-              <%= image_tag current_user.profile_photo %>
-            <% end %>
-            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-            <%= link_to "Edit Profile", edit_user_registration_path %>
+
+        <% if current_user %>
+          Welcome <%= current_user.first_name %>!
+          <% if current_user.profile_photo == nil %>
+            <% current_user.profile_photo = "/uploads/user/profile_photo/75/featmeme.jpg" %>
           <% else %>
-            <h4 class="log_in">You are not logged in  <%= link_to "Log In", new_user_session_path, method: :get %>
-            <%= link_to "Sign Up", new_user_registration_path, method: :get %><h4>
+            <%= image_tag current_user.profile_photo %>
           <% end %>
-        </div>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          <%= link_to "Edit Profile", edit_user_registration_path %>
+        <% else %>
+          <h4 class="log_in">You are not logged in  <%= link_to "Log In", new_user_session_path, method: :get %>
+          <%= link_to "Sign Up", new_user_registration_path, method: :get %><h4>
+        <% end %>
+        <h1>Donut Worry, Be Happy</h1>
+        <img><%= image_tag("Donut_Worry.png", :size => "150x150") %></img>
+        </br>
+        </hr>
       </div>
     </div>
     <%= yield %>
   </body>
+
 </html>
