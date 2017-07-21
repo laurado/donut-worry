@@ -6,7 +6,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css">
   </head>
 
   <body>
@@ -29,12 +30,12 @@
             <%= link_to "Edit Profile", edit_user_registration_path %>
           </span>
         <% else %>
-          <h4 class="log_in">You are not logged in  <%= link_to "Log In", new_user_session_path, method: :get %>
-          <%= link_to "Sign Up", new_user_registration_path, method: :get %><h4>
+          <%= image_tag current_user.profile_photo %>
         <% end %>
         <h1>Donut Worry, Be Happy</h1>
       </>
     </div>
-    <%= yield %>
-  </body>
+  </div>
+  <%= yield %>
+</body>
 </html>
