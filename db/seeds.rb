@@ -44,7 +44,7 @@ user1 = User.create(
   "lh7b3a.jpg"
 )
 
-user1 = User.create(
+user2 = User.create(
   first_name: "Ron",
   last_name: "Swanson",
   email: "ron@pawnee.com",
