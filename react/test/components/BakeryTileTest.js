@@ -35,4 +35,4 @@ describe('BakeryTile displays info', () => {
     expect(wrapper.find('p')).toBePresent();
     expect(wrapper.find('p').text()).toBe('Jackie is my Mom.');
   });
-})
+});
