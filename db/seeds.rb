@@ -34,31 +34,55 @@ bakery3 = Bakery.create(
   "/v2Q-p3MGqFs/s1600/IMG_0331.jpg"
 )
 
+user1 = User.create(
+  first_name: "Ann",
+  last_name: "Perkins",
+  email: "annperkins@pawnee.com",
+  password: "123456",
+  password_confirmation: "123456",
+  profile_photo: "http://blog.elanco.org/floodm7a/files/2015/10/Ann-Perkins-1"\
+  "lh7b3a.jpg"
+)
+
+user2 = User.create(
+  first_name: "Ron",
+  last_name: "Swanson",
+  email: "ron@pawnee.com",
+  password: "123456",
+  password_confirmation: "123456",
+  profile_photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFs-"\
+  "NXeCNuUaQ2RgAuy_0bptbQCKPCdyaga2eLiV7UVqAjQyGzzA"
+)
+
 Review.create(
   rating: 5,
   description: "This is the best bakery, trust me. We win sooo many donuts."\
   " It's yuge.",
   votes: 1,
-  bakery: bakery1
+  bakery: bakery1,
+  user: user1
 )
 
 Review.create(
   rating: 1,
   description: "This bakery is very low-energy. SAD!",
   votes: 5,
-  bakery: bakery1
+  bakery: bakery1,
+  user: user2
 )
 
 Review.create(
   rating: 2,
   description: "FAKE BAKERY!",
   votes: 1,
-  bakery: bakery2
+  bakery: bakery2,
+  user: user1
 )
 
 Review.create(
   rating: 3,
   description: "Make America Bake Again!",
   votes: 10,
-  bakery: bakery3
+  bakery: bakery3,
+  user: user2
 )

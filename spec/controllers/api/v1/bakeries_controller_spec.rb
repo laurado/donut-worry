@@ -30,6 +30,51 @@ RSpec.describe Api::V1::BakeriesController, type: :controller do
     )
   end
 
+  let!(:first_review) do
+    Review.create(
+      rating: 5,
+      description: "This is the best bakery, trust me. We win sooo many"\
+      " donuts. It's yuge.",
+      votes: 1,
+      bakery: first_bakery,
+      user: first_user
+    )
+  end
+
+  let!(:second_review) do
+    Review.create(
+      rating: 1,
+      description: "This bakery is very low-energy. SAD!",
+      votes: 5,
+      bakery: first_bakery,
+      user: second_user
+    )
+  end
+
+  let!(:first_user) do
+    User.create(
+      first_name: "Ann",
+      last_name: "Perkins",
+      email: "annperkins@pawnee.com",
+      password: "123456",
+      password_confirmation: "123456",
+      profile_photo: "http://blog.elanco.org/floodm7a/files/2015/10/"\
+      "Ann-Perkins-1lh7b3a.jpg"
+    )
+  end
+
+  let!(:second_user) do
+    User.create(
+      first_name: "Ron",
+      last_name: "Swanson",
+      email: "ron@pawnee.com",
+      password: "123456",
+      password_confirmation: "123456",
+      profile_photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:A"\
+      "Nd9GcQFs-NXeCNuUaQ2RgAuy_0bptbQCKPCdyaga2eLiV7UVqAjQyGzzA"
+    )
+  end
+
   describe "GET#index" do
     it "should return a list of all the bakeries" do
       get :index
@@ -64,6 +109,33 @@ RSpec.describe Api::V1::BakeriesController, type: :controller do
       "bp.blogspot.com/-sV8nvQ4Gdp4/TjrLSxQDz3I/AAAAAAAAAA4/CGBF679SyTU"\
       "/s860/new%2Bblog%2Bpic.jpg"
 
+    end
+  end
+
+  describe "GET#show" do
+    it "should return a bakery and all its reviews" do
+      get :show, params: { id: first_bakery.id }
+
+      returned_json = JSON.parse(response.body)
+      expect(response.status).to eq 200
+      expect(response.content_type).to eq("application/json")
+
+      expect(returned_json.length).to eq 2
+      expect(returned_json['bakery']["name"]).to eq first_bakery.name
+      expect(returned_json['reviews'].length).to eq 2
+    end
+
+    it "should return the most recent review first" do
+      get :show, params: { id: first_bakery.id }
+
+      returned_json = JSON.parse(response.body)
+      expect(response.status).to eq 200
+      expect(response.content_type).to eq("application/json")
+
+      expect(returned_json['reviews'][0]["rating"]).to eq second_review.rating
+      expect(returned_json['reviews'][1]["rating"]).to eq first_review.rating
+      expect(returned_json['reviews'][0]["description"]).to eq second_review.description
+      expect(returned_json['reviews'][1]["description"]).to eq first_review.description
     end
   end
 end
