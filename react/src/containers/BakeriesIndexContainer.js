@@ -8,9 +8,15 @@ class BakeriesIndexContainer extends Component {
       bakeries: []
     }
   }
+  componentDidMount() {
+    fetch('/api/v1/bakeries')
+    .then(response => response.json())
+    .then(body => {
+      this.setState({ bakeries: body.bakeries })
+    })
+  }
 
   render() {
-
     let bakeries = this.state.bakeries.map(bakery => {
       return(
         <BakeryTile
@@ -22,7 +28,6 @@ class BakeriesIndexContainer extends Component {
 
     return (
       <div>
-        <hr/>
         {bakeries}
       </div>
     )

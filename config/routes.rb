@@ -10,7 +10,13 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :bakeries, only: [:index, :create]
+
+      resources :bakeries, only: [:index]
+
+      resources :bakeries, only: [:show] do
+        resources :reviews, only: [:index]
+      end
+
     end
   end
 end
