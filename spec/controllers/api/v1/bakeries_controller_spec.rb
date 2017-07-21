@@ -33,8 +33,8 @@ RSpec.describe Api::V1::BakeriesController, type: :controller do
   let!(:first_review) do
     Review.create(
       rating: 5,
-      description: "This is the best bakery, trust me. We win sooo many donuts."\
-      " It's yuge.",
+      description: "This is the best bakery, trust me. We win sooo many"\
+      " donuts. It's yuge.",
       votes: 1,
       bakery: first_bakery,
       user: first_user
@@ -134,10 +134,8 @@ RSpec.describe Api::V1::BakeriesController, type: :controller do
 
       expect(returned_json['reviews'][0]["rating"]).to eq second_review.rating
       expect(returned_json['reviews'][1]["rating"]).to eq first_review.rating
-      expect(returned_json['reviews'][0]["description"]).to eq second_review.
-      description
-      expect(returned_json['reviews'][1]["description"]).to eq first_review.
-      description
+      expect(returned_json['reviews'][0]["description"]).to eq second_review.description
+      expect(returned_json['reviews'][1]["description"]).to eq first_review.description
     end
   end
 end

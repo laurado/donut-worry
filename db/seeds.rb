@@ -39,7 +39,7 @@ user1 = User.create(
   last_name: "Perkins",
   email: "annperkins@pawnee.com",
   password: "123456",
-  password_confirmation: "123456"
+  password_confirmation: "123456",
   profile_photo: "http://blog.elanco.org/floodm7a/files/2015/10/Ann-Perkins-1"\
   "lh7b3a.jpg"
 )
@@ -49,7 +49,7 @@ user1 = User.create(
   last_name: "Swanson",
   email: "ron@pawnee.com",
   password: "123456",
-  password_confirmation: "123456"
+  password_confirmation: "123456",
   profile_photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFs-"\
   "NXeCNuUaQ2RgAuy_0bptbQCKPCdyaga2eLiV7UVqAjQyGzzA"
 )

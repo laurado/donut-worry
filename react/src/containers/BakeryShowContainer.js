@@ -22,8 +22,6 @@ class BakeryShowContainer extends Component {
   }
 
   render() {
-    console.log(this.state.bakery)
-    console.log(this.state.reviews)
 
     return (
       <div>
