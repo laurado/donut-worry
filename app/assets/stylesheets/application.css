@@ -14,19 +14,4 @@
  *= require_self
  */
 
- h1 {
-   text-align:center;
-   padding-top: -15px;
- }
-
- h4 {
-   float: right;
- }
-img {
-  float: left;
-  padding-top: -30px;
-}
-
-.signs {
-  float: right;
-}
+ 
