@@ -16,7 +16,6 @@ Rails.application.routes.draw do
       resources :bakeries, only: [:show] do
         resources :reviews, only: [:index]
       end
-
     end
   end
 end
