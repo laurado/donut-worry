@@ -25,4 +25,4 @@ describe('ReviewTile displays info', () => {
     expect(wrapper.find('h4')).toBePresent();
     expect(wrapper.find('h4').text()).toBe('36');
   });
-})
+});
