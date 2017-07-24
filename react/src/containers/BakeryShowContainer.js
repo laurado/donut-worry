@@ -27,7 +27,9 @@ class BakeryShowContainer extends Component {
       return (
         <ReviewTile
           key={review.id}
-          review={review}
+          rating={review.rating}
+          votes={review.votes}
+          description={review.description}
         />
       )
     })

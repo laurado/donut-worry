@@ -1,16 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, browserHistory, Switch } from 'react-router-dom';
+import { Router, browserHistory, IndexRoute } from 'react-router';
 import BakeriesIndexContainer from './BakeriesIndexContainer';
 import BakeryShowContainer from './BakeryShowContainer'
 
 const App = props => {
   return (
     <Router>
-      <Switch>
-        <Route exact path='/' component={BakeriesIndexContainer}/>
-        <Route exact path='/bakeries' component={BakeriesIndexContainer}/>
-        <Route path='/bakeries/:id' component={BakeryShowContainer}/>
-      </Switch>
+      <Route path='/' component={BakeriesIndexContainer}/>
+      <Route path='/bakeries' component={BakeriesIndexContainer}/>
+      <Route path='/bakeries/:id' component={BakeryShowContainer}/>
     </Router>
   )
 }

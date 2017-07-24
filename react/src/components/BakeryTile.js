@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 const BakeryTile = (props) => {
   let image;
@@ -19,7 +19,7 @@ const BakeryTile = (props) => {
             </div>
             <div className='small-8 columns'>
               <h3>{props.name}</h3>
-              <h5>{props.address}, {props.city} {props.state}, {props.zip}</h5>
+              <h5>{props.address}, {props.city}, {props.state} {props.zip}</h5>
               <p>{props.description}</p>
             </div>
           </div>

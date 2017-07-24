@@ -31,9 +31,9 @@ describe('BakeryTile displays info', () => {
     expect(wrapper.find('h3').text()).toBe('Union Square Donuts');
   })
 
-  it('should render an h4 tag with the address', () => {
+  it('should render an h5 tag with the address', () => {
     expect(wrapper.find('h5')).toBePresent();
-    expect(wrapper.find('h5').text()).toBe('20 Bow Street, Somerville MA 02143');
+    expect(wrapper.find('h5').text()).toBe('20 Bow Street, Somerville, MA 02143');
   });
   it('should render an p tag with the description', () => {
     expect(wrapper.find('p')).toBePresent();

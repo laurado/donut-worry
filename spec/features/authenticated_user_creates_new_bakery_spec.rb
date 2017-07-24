@@ -40,24 +40,26 @@ feature "authenticated users can add bakeries" do
     click_button "Create Bakery"
 
     expect(page).to have_content "Bakery was successfully created"
-    expect(page).to have_content "Union Square Donuts"
-    expect(page).to have_content "20 Bow Street"
-    expect(page).to have_content 'Cult donut maker'
   end
 
-  # scenario "adds a review for a bakery unsuccessfully" do
-  #
-  #   visit root_path
-  #
-  #   click_button "Add a Bakery"
-  #   expect(page).to have_content "New Bakery Form"
-  #
-  #   click_button "Create Bakery"
-  #
-  #   expect(page).to have_content "Name can't be blank"
-  #   expect(page).to have_content "Address can't be blank"
-  #   expect(page).to have_content "City can't be blank"
-  #   expect(page).to have_content "State can't be blank"
-  #   expect(page).to have_content "Zip can't be blank"
-  # end
+  scenario "adds a review for a bakery unsuccessfully" do
+    visit root_path
+    click_on "Log In"
+    fill_in "Password", with: "JackieIsMyMom"
+    fill_in "Email", with: "JackAttack16@email.com"
+    click_button "Log in"
+
+    visit root_path
+
+    click_link "Add a Bakery"
+    expect(page).to have_content "New Bakery Form"
+
+    click_button "Create Bakery"
+
+    expect(page).to have_content "Name can't be blank"
+    expect(page).to have_content "Address can't be blank"
+    expect(page).to have_content "City can't be blank"
+    expect(page).to have_content "State can't be blank"
+    expect(page).to have_content "Zip can't be blank"
+  end
 end
