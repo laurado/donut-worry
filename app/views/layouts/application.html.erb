@@ -4,8 +4,8 @@
     <title>DonutWorry</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css">
   </head>
@@ -19,6 +19,7 @@
 
           <% if current_user %>
             Welcome <%= current_user.first_name %>!
+            <%= link_to "Add a Bakery", new_bakery_path, method: :get %>
             <% if current_user.profile_photo == nil %>
               <% current_user.profile_photo = "/uploads/user/profile_photo/75/featmeme.jpg" %>
             <% else %>

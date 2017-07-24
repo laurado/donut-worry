@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
-
-  root 'static_pages#index'
-  resources :users
-
   resources :bakeries, only: [:index, :show, :new, :create]
 
   namespace :api do
@@ -16,4 +11,9 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  devise_for :users
+  root 'static_pages#index'
+  get 'bakeries' => 'static_pages#index'
+  get '/bakeries/:id' => 'static_pages#index'
 end
