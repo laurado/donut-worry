@@ -7,4 +7,8 @@ class Bakery < ApplicationRecord
   validates :city, presence: true
   validates :state, presence: true
   validates :zip, presence: true
+
+  def self.search(search)
+    where("title ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%")
+  end
 end
