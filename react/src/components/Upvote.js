@@ -13,7 +13,7 @@ class Upvote extends Component {
   render() {
     return(
       <form onSubmit={this.handleUpvoteSubmit}>
-        <button className='button' type='submit'> ^ </button>
+        <button className='button' type='submit'> <i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i> </button>
       </form>
     );
   }

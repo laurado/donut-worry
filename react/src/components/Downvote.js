@@ -13,7 +13,7 @@ class Downvote extends Component {
   render() {
     return(
       <form onSubmit={this.handleDownvoteSubmit}>
-        <button className='button' type='submit'> x </button>
+        <button className='button' type='submit'> <i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i> </button>
       </form>
     );
   }
