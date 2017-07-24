@@ -16,13 +16,21 @@ describe('ReviewTile displays info', () => {
           );
         });
 
-  it('should render an h3 tag', () => {
-    expect(wrapper.find('h3')).toBePresent();
-    expect(wrapper.find('h3').text()).toBe('5: Any old string.');
+  it('should render 3 h5 tags', () => {
+    expect(wrapper.find('h5').length).toBe(3);
   })
 
-  it('should render an h4 tag with the vote count', () => {
-    expect(wrapper.find('h4')).toBePresent();
-    expect(wrapper.find('h4').text()).toBe('36');
-  });
+  it('should render the description', () => {
+    expect(wrapper.text()).toMatch('Any old string')
+  })
+
+  it('should render the rating', () => {
+    expect(wrapper.text()).toMatch('Rating: 5')
+  })
+
+  it('should render the votes', () => {
+    expect(wrapper.text()).toMatch('Votes: 36')
+  })
+
+
 });

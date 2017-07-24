@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
-
-  root 'static_pages#index'
-  resources :users
-
-  resources :bakeries, only: [:index, :show] do
-    resources :reviews, only: [:index]
-  end
+  resources :bakeries, only: [:index, :show, :new, :create]
 
   namespace :api do
     namespace :v1 do
@@ -18,4 +11,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  devise_for :users
+  root 'static_pages#index'
 end
