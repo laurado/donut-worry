@@ -1,5 +1,5 @@
 class BakeriesController < ApplicationController
-  def index;end
+  def index; end
 
   def show
     @bakery = Bakery.find(params[:id])
