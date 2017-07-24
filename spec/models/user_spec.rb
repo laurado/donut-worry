@@ -19,6 +19,9 @@ RSpec.describe User, type: :model do
     )
   end
 
+  it { should have_valid(:admin).when(false) }
+  it { should have_valid(:admin).when(true) }
+
   it 'has a matching password confirmation for the password' do
     user = User.new
     user.password = 'password'
