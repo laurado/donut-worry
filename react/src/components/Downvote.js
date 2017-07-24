@@ -10,7 +10,7 @@ class Downvote extends Component {
     event.preventDefault()
     this.props.handleClick(this.props.review);
   }
-  render {
+  render() {
     return(
       <form onSubmit={this.handleDownvoteSubmit}>
         <button className='button' type='submit'> x </button>

@@ -3,9 +3,10 @@ import Upvote from './Upvote';
 
 const ReviewTile = (props) => {
   return(
-    <div>
-      <h3>{props.rating}: {props.description}</h3>
-      <h4>{props.votes}</h4>
+    <div className="callout">
+      <h5>Rating: {props.review.rating}</h5>
+      <h5>Description: {props.review.description}</h5>
+      <h5>Votes: {props.review.votes}</h5>
     </div>
   )
 }
