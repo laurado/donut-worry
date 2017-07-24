@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DonutWorry</title>
+    <title>Donut Worry</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -14,28 +14,30 @@
     <% flash.each do |key, value| %>
       <div class=“alert alert-<%= key %>“><%= value %></div>
     <% end %>
-    <div class="row">
-      <div class="crop" style="small-12 columns">
-        <% if current_user %>
-          <% if current_user.profile_photo == nil %>
-            <% current_user.profile_photo = "/uploads/user/profile_photo/75/featmeme.jpg" %>
+
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">Donut Worry, Be Happy</li>
+        </ul>
+      </div>
+
+      <div class="top-bar-right">
+        <ul class="menu">
+          <% if current_user %>
+            <li class="menu-text">Welcome <%= current_user.first_name %>!</li>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
           <% else %>
-            <%= image_tag current_user.profile_photo %>
+            <li><%= link_to "Log In", new_user_session_path, method: :get %></li>
+            <li><%= link_to "Sign Up", new_user_registration_path, method: :get %></li>
           <% end %>
-          <span class="name">
-            <%= current_user.first_name %>
-          </span>
-          <span class="sign">
-            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-            <%= link_to "Edit Profile", edit_user_registration_path %>
-          </span>
-        <% else %>
-          <%= image_tag current_user.profile_photo %>
-        <% end %>
-        <h1>Donut Worry, Be Happy</h1>
-      </>
+        </ul>
+      </div>
     </div>
-  </div>
-  <%= yield %>
-</body>
+
+    <%= image_tag("Donut_Worry.png", :size => "150x150") %>
+
+    <%= yield %>
+  </body>
 </html>
