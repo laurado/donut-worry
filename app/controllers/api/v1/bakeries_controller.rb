@@ -1,3 +1,4 @@
+require 'pry'
 class Api::V1::BakeriesController < ApplicationController
   def index
     render json: Bakery.all, adapter: :json
@@ -8,5 +9,9 @@ class Api::V1::BakeriesController < ApplicationController
     reviews = bakery.reviews.order(created_at: :desc)
 
     render json: { bakery: bakery, reviews: reviews }, adapter: :json
+  end
+
+  def destroy
+    binding.pry
   end
 end

@@ -7,6 +7,7 @@ class BakeryShowContainer extends Component {
       bakery: {},
       reviews: []
     }
+    this.deleteBakery = this.deleteBakery.bind(this)
   }
 
   componentDidMount() {
@@ -21,6 +22,22 @@ class BakeryShowContainer extends Component {
     })
   }
 
+  deleteBakery() {
+    debugger;
+    let bakeryId = this.props.match.params.id
+    fetch(`/api/v1/bakeries/${bakeryId}`, {
+      method: "DELETE"
+      .then(response => response.json())
+      .then(json => {
+        this.setState({
+          bakery: body.bakery,
+          reviews: body.reviews
+        })
+      })
+    })
+  }
+
+
   render() {
 
     return (
@@ -30,6 +47,9 @@ class BakeryShowContainer extends Component {
         <img className='show-image' src={this.state.bakery.img_url} alt={this.state.bakery.name}></img>
         <h5>{this.state.bakery.address}, {this.state.bakery.city} {this.state.bakery.state}, {this.state.bakery.zip}</h5>
         <p>{this.state.bakery.description}</p>
+        <button onClick={this.deleteBakery}>
+          Delete Bakery
+        </button>
       </div>
     )
   }

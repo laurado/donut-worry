@@ -5,16 +5,16 @@ Rails.application.routes.draw do
   resources :users
 
   resources :bakeries, only: [:index, :show] do
-    resources :reviews, only: [:index]
+    resources :reviews, only: [:index, :edit, :destroy]
   end
 
   namespace :api do
     namespace :v1 do
 
-      resources :bakeries, only: [:index]
+      resources :bakeries, only: [:index, :edit, :destroy]
 
-      resources :bakeries, only: [:show] do
-        resources :reviews, only: [:index]
+      resources :bakeries, only: [:show, :edit, :destroy] do
+        resources :reviews, only: [:index, :edit, :destroy]
       end
     end
   end

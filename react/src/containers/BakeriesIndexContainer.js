@@ -16,6 +16,8 @@ class BakeriesIndexContainer extends Component {
     })
   }
 
+
+
   render() {
     let bakeries = this.state.bakeries.map(bakery => {
       return(
