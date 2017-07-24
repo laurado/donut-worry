@@ -1,13 +1,4 @@
 require 'rails_helper'
-# As an authenticated user
-# I want to add a bakery
-# So that others can review it
-# [] clicking the 'add new bakery' button should display a form for creating a new bakery
-# [] Visiting the `/bakeries/new` path should display a form for creating a new bakery.
-# [] A bakery must have a name, address, city, state, and zip code. It can optionally have a description.
-# [] When adding a new bakery, if I fill out the form correctly, I should see a notification that the bakery was added correctly.
-# [] When adding a new bakery, if I fill out the form correctly, I should see the page for the newly created bakery.
-# [] When adding a new bakery, if I fill out the form incorrectly and submit the form, I should see the partially completed form and the corresponding validation errors.
 
 feature "authenticated users can add bakeries" do
   let!(:jackie) do

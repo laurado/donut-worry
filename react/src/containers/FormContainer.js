@@ -38,7 +38,7 @@ class FormContainer extends Component {
     };
     this.props.addNewBakery(formPayload);
     this.handleClearForm(event);
-  };
+  }
 
   handleClearForm(event) {
     event.preventDefault();
@@ -51,7 +51,7 @@ class FormContainer extends Component {
       description: '',
       img_url: ''
     })
-  };
+  }
 
   render() {
 
