@@ -11,7 +11,7 @@ class BakeryShowContainer extends Component {
   }
 
   componentDidMount() {
-    let bakeryId = this.props.match.params.id
+    let bakeryId = this.props.params.id
     fetch(`/api/v1/bakeries/${bakeryId}`)
     .then(response => response.json())
     .then(body => {
@@ -43,6 +43,7 @@ class BakeryShowContainer extends Component {
         <p>{this.state.bakery.description}</p>
         <h3>Reviews</h3>
         {reviews}
+        <a href={`/bakeries/${this.props.params.id}/reviews/new`}>Add New Review</a>
       </div>
     )
   }
