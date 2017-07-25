@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router';
 
-
 class BakeryShowContainer extends Component {
   constructor(props) {
     super(props);
@@ -33,6 +32,16 @@ class BakeryShowContainer extends Component {
 
 
   render() {
+    let reviews = this.state.reviews.map(review => {
+      return (
+        <ReviewTile
+          key={review.id}
+          rating={review.rating}
+          votes={review.votes}
+          description={review.description}
+        />
+      )
+    })
 
     return (
       <div>
@@ -41,12 +50,17 @@ class BakeryShowContainer extends Component {
         <img className='show-image' src={this.state.bakery.img_url} alt={this.state.bakery.name}></img>
         <h5>{this.state.bakery.address}, {this.state.bakery.city} {this.state.bakery.state}, {this.state.bakery.zip}</h5>
         <p>{this.state.bakery.description}</p>
+
         <div>
-        
+
         <a href='/bakeries' onClick={this.deleteBakery} >
           Delete Bakery
         </a>
       </div>
+
+        <h3>Reviews</h3>
+        {reviews}
+
       </div>
     )
   }

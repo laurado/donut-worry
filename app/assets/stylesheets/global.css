@@ -3,10 +3,6 @@ h1 {
   padding-top: -15px;
 }
 
-h4 {
-  float: right;
-}
-
 .index-image {
   width: 20%;
   height: auto;
@@ -18,7 +14,7 @@ h4 {
 }
 
 .signs {
-  float: right;
+ float: right;
 }
 
 .crop img {
@@ -39,7 +35,14 @@ h4 {
  float: right;
 }
 
-body {
- background-color: pink;
- color: white;
+.profile-photo {
+  width: 45px;
+  height: 45px;
+}
+
+.logo {
+  height: 200px;
+  width: 200px;
+  display: block;
+  margin: auto;
 }
