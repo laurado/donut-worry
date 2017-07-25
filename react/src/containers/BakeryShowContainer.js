@@ -11,7 +11,7 @@ class BakeryShowContainer extends Component {
   }
 
   componentDidMount() {
-    let bakeryId = this.props.match.params.id
+    let bakeryId = this.props.params.id
     fetch(`/api/v1/bakeries/${bakeryId}`)
     .then(response => response.json())
     .then(body => {
