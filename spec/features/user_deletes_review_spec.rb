@@ -12,7 +12,7 @@ feature "authenticated users can add reviews" do
     )
   end
 
-  scenario "edits review successfully" do
+  scenario "deletes review successfully" do
     union_square_donuts = Bakery.create(
       name: 'Union Square Donuts',
       address: '20 Bow Street',
@@ -43,12 +43,7 @@ feature "authenticated users can add reviews" do
 
     visit edit_bakery_review_path(union_square_donuts.id, union_square_donuts.reviews[0])
 
-    fill_in "Rating", with: "4"
-    fill_in "Description", with: "Go eat a donut, fool!"
-
-    click_on "Update Review"
-
-    expect(page).to have_content "Review successfully updated"
+    find_button("Delete").visible?
 
   end
 end

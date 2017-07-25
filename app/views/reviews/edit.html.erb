@@ -5,6 +5,7 @@
   <%= link_to "Back to Bakery", bakery_path(@bakery) %>
 
   <%= form_for [@bakery, @review], :url => edit_bakery_review_path(@bakery, @review) do |f| %>
+
     <%= f.label :rating, "Rating" %>
     <%= f.text_field :rating %>
     <br /><br />
@@ -14,7 +15,7 @@
     <br /><br />
     <%= f.submit "Update Review" %>
 
-  <% end %>
+<% end %>
 
   <% if (current_user && current_user.admin?) ||
     current_user.id == @review.user_id %>
