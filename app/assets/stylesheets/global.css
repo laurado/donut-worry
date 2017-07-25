@@ -45,3 +45,7 @@
 .bakery-description {
   padding-bottom: 40px;
 }
+
+#error_explanation {
+  color: red;
+}
