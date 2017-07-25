@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ReviewTile from '../components/ReviewTile'
+import { Route, Redirect } from 'react-router';
+import ReviewTile from '../components/ReviewTile';
 
 class BakeryShowContainer extends Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class BakeryShowContainer extends Component {
       bakery: {},
       reviews: []
     }
+    this.deleteBakery = this.deleteBakery.bind(this)
   }
 
   componentDidMount() {
@@ -22,11 +24,24 @@ class BakeryShowContainer extends Component {
     })
   }
 
+  deleteBakery() {
+    let bakeryId = this.props.params.id
+    fetch(`/api/v1/bakeries/${bakeryId}`, {
+      method: "DELETE"
+    })
+  }
+
+
+
   render() {
+    let bakeryId = this.props.params.id
     let reviews = this.state.reviews.map(review => {
       return (
         <ReviewTile
           key={review.id}
+          id={review.id}
+          bakery_id={review.bakery_id}
+          user_id={review.user_id}
           rating={review.rating}
           votes={review.votes}
           description={review.description}
@@ -41,6 +56,7 @@ class BakeryShowContainer extends Component {
         <img className='show-image' src={this.state.bakery.img_url} alt={this.state.bakery.name}></img>
         <h5>{this.state.bakery.address}, {this.state.bakery.city} {this.state.bakery.state}, {this.state.bakery.zip}</h5>
         <p>{this.state.bakery.description}</p>
+
         <h3>Reviews</h3>
         {reviews}
         <a href={`/bakeries/${this.props.params.id}/reviews/new`}>Add New Review</a>
@@ -50,3 +66,13 @@ class BakeryShowContainer extends Component {
 }
 
 export default BakeryShowContainer;
+
+
+//
+// <% if current_user.admin? %>
+// <div>
+//   <a href='/bakeries' onClick={this.deleteBakery} >
+//   Delete Bakery
+// </a>
+// </div>
+// <% end %>

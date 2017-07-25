@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :bakeries, only: [:index, :show, :new, :create] do
-    resources :reviews, only: [:new, :create]
+    resources :reviews
   end
 
   namespace :api do
@@ -9,10 +9,12 @@ Rails.application.routes.draw do
       resources :bakeries, only: [:index]
 
       resources :bakeries, only: [:show] do
-        resources :reviews, only: [:index]
+        resources :reviews
       end
     end
   end
+
+  patch 'bakeries/:bakery_id/reviews/:id/edit', controller: 'reviews', action: :update
 
   devise_for :users
   root 'static_pages#index'
