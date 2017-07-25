@@ -7,8 +7,7 @@ feature "authenticated users can add reviews" do
       last_name: 'Ma',
       password: 'JackieIsMyMom',
       profile_photo: "http://i.imgur.com/jluf593.jpg",
-      email: 'JackAttack16@email.com',
-      admin: true
+      email: 'JackAttack16@email.com'
     )
   end
 
