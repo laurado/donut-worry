@@ -1,10 +1,10 @@
 <h1>New Review Form</h1>
-
+<div class='callout'>
 <%= form_for([@bakery, @review], html: { class: 'form'}) do |f| %>
 
   <% if @review.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+      <h4><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h4>
 
       <ul>
         <% @review.errors.full_messages.each do |message| %>
@@ -15,12 +15,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :rating %><br />
+    <%= f.label :rating %>
     <%= f.text_field :rating %>
   </div>
 
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
 
@@ -28,5 +28,7 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>
+
 
 <%= link_to 'Back', bakery_path(@bakery) %>

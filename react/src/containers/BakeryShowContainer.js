@@ -36,8 +36,8 @@ class BakeryShowContainer extends Component {
 
     return (
       <div>
-        <hr></hr>
-        <div className="row">
+
+        <div className="row bakery-description">
           <div className="columns small-4">
             <img className='show-image' src={this.state.bakery.img_url} alt={this.state.bakery.name}></img>
           </div>
@@ -49,7 +49,7 @@ class BakeryShowContainer extends Component {
         </div>
         <h3>Reviews</h3>
         {reviews}
-        <a href={`/bakeries/${this.props.params.id}/reviews/new`}>Add New Review</a>
+        <a className="button" href={`/bakeries/${this.props.params.id}/reviews/new`}>Add New Review</a>
       </div>
     )
   }
