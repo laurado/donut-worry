@@ -41,7 +41,10 @@ feature "authenticated users can add reviews" do
 
     expect(page).to have_content "New review was successfully created."
 
-    visit edit_bakery_review_path(union_square_donuts.id, union_square_donuts.reviews[0])
+    visit edit_bakery_review_path(
+      union_square_donuts.id,
+      union_square_donuts.reviews[0]
+    )
 
     find_button("Delete").visible?
 
