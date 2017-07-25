@@ -12,7 +12,7 @@ class BakeryShowContainer extends Component {
   }
 
   componentDidMount() {
-    let bakeryId = this.props.match.params.id
+    let bakeryId = this.props.params.id
     fetch(`/api/v1/bakeries/${bakeryId}`)
     .then(response => response.json())
     .then(body => {
@@ -24,7 +24,7 @@ class BakeryShowContainer extends Component {
   }
 
   deleteBakery() {
-    let bakeryId = this.props.match.params.id
+    let bakeryId = this.props.params.id
     fetch(`/api/v1/bakeries/${bakeryId}`, {
       method: "DELETE"
     })
@@ -32,6 +32,7 @@ class BakeryShowContainer extends Component {
 
 
   render() {
+    let bakeryId = this.props.params.id
     let reviews = this.state.reviews.map(review => {
       return (
         <ReviewTile
@@ -50,17 +51,13 @@ class BakeryShowContainer extends Component {
         <img className='show-image' src={this.state.bakery.img_url} alt={this.state.bakery.name}></img>
         <h5>{this.state.bakery.address}, {this.state.bakery.city} {this.state.bakery.state}, {this.state.bakery.zip}</h5>
         <p>{this.state.bakery.description}</p>
-
         <div>
-
-        <a href='/bakeries' onClick={this.deleteBakery} >
-          Delete Bakery
-        </a>
-      </div>
-
+          <a href='/bakeries' onClick={this.deleteBakery} >
+            Delete Bakery
+          </a>
+        </div>
         <h3>Reviews</h3>
         {reviews}
-
       </div>
     )
   }
