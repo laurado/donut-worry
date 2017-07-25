@@ -43,6 +43,7 @@ class BakeryShowContainer extends Component {
         <p>{this.state.bakery.description}</p>
         <h3>Reviews</h3>
         {reviews}
+        <a href={`/bakeries/${this.props.params.id}/reviews/new`}>Add New Review</a>
       </div>
     )
   }
