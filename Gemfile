@@ -10,6 +10,7 @@ gem "carrierwave"
 gem 'devise'
 gem 'mini_magick', '~> 4.3'
 # gem 'rmagick', '~> 2.16.0'
+gem "fog-aws"
 gem 'rails', '~> 5.1.2'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
@@ -28,6 +29,7 @@ group :development, :test do
   gem 'factory_girl'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
+  gem "dotenv-rails"
 end
 
 group :development do
