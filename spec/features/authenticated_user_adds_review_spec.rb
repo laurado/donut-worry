@@ -13,14 +13,14 @@ feature "authenticated users can add reviews" do
 
   scenario "adds review successfully" do
     union_square_donuts = Bakery.create(
-    name: 'Union Square Donuts',
-    address: '20 Bow Street',
-    city: 'Somerville',
-    state: 'MA',
-    zip: '02143',
-    description: 'Cult donut maker offers unique sweet & savory flavors,
-    pastries & java in modern, wood-clad digs.',
-    img_url: 'www.image.com/1'
+      name: 'Union Square Donuts',
+      address: '20 Bow Street',
+      city: 'Somerville',
+      state: 'MA',
+      zip: '02143',
+      description: 'Cult donut maker offers unique sweet & savory flavors,
+      pastries & java in modern, wood-clad digs.',
+      img_url: 'www.image.com/1'
     )
 
     visit root_path
@@ -43,14 +43,14 @@ feature "authenticated users can add reviews" do
 
   scenario "adds a review for a bakery unsuccessfully" do
     union_square_donuts = Bakery.create(
-    name: 'Union Square Donuts',
-    address: '20 Bow Street',
-    city: 'Somerville',
-    state: 'MA',
-    zip: '02143',
-    description: 'Cult donut maker offers unique sweet & savory flavors,
-    pastries & java in modern, wood-clad digs.',
-    img_url: 'www.image.com/1'
+      name: 'Union Square Donuts',
+      address: '20 Bow Street',
+      city: 'Somerville',
+      state: 'MA',
+      zip: '02143',
+      description: 'Cult donut maker offers unique sweet & savory flavors,
+      pastries & java in modern, wood-clad digs.',
+      img_url: 'www.image.com/1'
     )
 
     visit root_path
