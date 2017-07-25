@@ -21,6 +21,34 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @bakery = Bakery.find(params[:bakery_id])
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @bakery = Bakery.find(params[:bakery_id])
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      flash[:notice] = "Review successfully updated"
+      redirect_to bakery_path(@bakery.id)
+    else
+      flash[:alert] = "Unable to update. There was an error"
+      render :edit
+    end
+  end
+
+  def destroy
+    review = Review.find(params[:id])
+    @bakery = review.bakery
+    if Review.destroy(review.id)
+      flash[:notice] = "Your review has been deleted."
+    else
+      flash[:alert] = "Error deleting review."
+    end
+    redirect_to bakery_path(@bakery.id)
+  end
+
   private
 
   def review_params
