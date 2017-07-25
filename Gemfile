@@ -6,12 +6,12 @@ git_source(:github) do |repo_name|
 end
 
 gem 'active_model_serializers'
-gem "carrierwave"
+gem 'carrierwave'
 gem 'devise'
 gem 'mini_magick', '~> 4.3'
 # gem 'rmagick', '~> 2.16.0'
 gem 'fog'
-gem "fog-aws"
+gem 'fog-aws'
 gem 'rails', '~> 5.1.2'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
@@ -24,7 +24,7 @@ gem 'rails-assets-foundation', source: 'https://rails-assets.org'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem "dotenv-rails"
+  gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'capybara'
