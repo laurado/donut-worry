@@ -12,6 +12,7 @@ feature "authenticated users can add reviews" do
   end
 
   scenario "adds review successfully" do
+    ActionMailer::Base.deliveries.clear
     union_square_donuts = Bakery.create(
       name: 'Union Square Donuts',
       address: '20 Bow Street',
@@ -39,6 +40,7 @@ feature "authenticated users can add reviews" do
     click_button "Create Review"
 
     expect(page).to have_content "New review was successfully created."
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 
   scenario "adds a review for a bakery unsuccessfully" do
