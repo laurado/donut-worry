@@ -10,6 +10,7 @@ gem "carrierwave"
 gem 'devise'
 gem 'mini_magick', '~> 4.3'
 # gem 'rmagick', '~> 2.16.0'
+gem 'fog'
 gem "fog-aws"
 gem 'rails', '~> 5.1.2'
 gem 'pg', '~> 0.18'
@@ -19,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'foundation-rails'
 gem 'jbuilder', '~> 2.5'
+gem 'rails-assets-foundation', source: 'https://rails-assets.org'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
