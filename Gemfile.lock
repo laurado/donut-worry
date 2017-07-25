@@ -102,9 +102,9 @@ GEM
     factory_girl (4.8.0)
       activesupport (>= 3.0.0)
     ffi (1.9.18)
-<<<<<<< HEAD
+adding-mailer
     foundation-rails (6.4.1.2)
-=======
+
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.38.0)
@@ -234,7 +234,7 @@ GEM
       nokogiri (>= 1.5.11, < 2.0.0)
     formatador (0.2.5)
     foundation-rails (5.4.5.0)
->>>>>>> 26f117b9dfb71ec6ea6864f3073e70e2c9bdeac3
+master
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
       sprockets-es6 (>= 0.9.0)
