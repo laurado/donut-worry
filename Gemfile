@@ -24,6 +24,7 @@ gem 'rails-assets-foundation', source: 'https://rails-assets.org'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "dotenv-rails"
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'capybara'
@@ -31,7 +32,6 @@ group :development, :test do
   gem 'factory_girl'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
-  gem "dotenv-rails"
 end
 
 group :development do
