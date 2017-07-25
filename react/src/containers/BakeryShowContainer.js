@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router';
+import ReviewTile from '../components/ReviewTile';
 
 class BakeryShowContainer extends Component {
   constructor(props) {
@@ -31,12 +32,16 @@ class BakeryShowContainer extends Component {
   }
 
 
+
   render() {
     let bakeryId = this.props.params.id
     let reviews = this.state.reviews.map(review => {
       return (
         <ReviewTile
           key={review.id}
+          id={review.id}
+          bakery_id={review.bakery_id}
+          user_id={review.user_id}
           rating={review.rating}
           votes={review.votes}
           description={review.description}
@@ -51,11 +56,7 @@ class BakeryShowContainer extends Component {
         <img className='show-image' src={this.state.bakery.img_url} alt={this.state.bakery.name}></img>
         <h5>{this.state.bakery.address}, {this.state.bakery.city} {this.state.bakery.state}, {this.state.bakery.zip}</h5>
         <p>{this.state.bakery.description}</p>
-        <div>
-          <a href='/bakeries' onClick={this.deleteBakery} >
-            Delete Bakery
-          </a>
-        </div>
+
         <h3>Reviews</h3>
         {reviews}
       </div>
@@ -64,3 +65,13 @@ class BakeryShowContainer extends Component {
 }
 
 export default BakeryShowContainer;
+
+
+//
+// <% if current_user.admin? %>
+// <div>
+//   <a href='/bakeries' onClick={this.deleteBakery} >
+//   Delete Bakery
+// </a>
+// </div>
+// <% end %>

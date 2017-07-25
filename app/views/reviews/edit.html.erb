@@ -1,10 +1,10 @@
-<% if current_user != @review.user %>
-  <h2>You can't edit reviews you didn't write!</h2>
+<% if (!current_user && !current_user.admin?) %>
+   <h2>You can't edit reviews you didn't write!</h2>
 <% else %>
-  <h2>Review Form for <%= @show.title %></h2>
-  <%= link_to "Back to Show", show_path(@show) %>
+  <h2>Edit Review for <%= @bakery.name %></h2>
+  <%= link_to "Back to Bakery", bakery_path(@bakery) %>
 
-  <%= form_for [@show, @review] do |f| %>
+  <%= form_for [@bakery, @review], :url => edit_bakery_review_path(@bakery, @review) do |f| %>
     <%= f.label :rating, "Rating" %>
     <%= f.text_field :rating %>
     <br /><br />
@@ -12,14 +12,17 @@
     <%= f.label :description, "Description" %>
     <%= f.text_area :description %>
     <br /><br />
-
     <%= f.submit "Update Review" %>
 
   <% end %>
 
   <% if (current_user && current_user.admin?) ||
-    current_user == @review.user %>
-    <%= button_to "Delete", @review, method: :delete,
+    current_user.id == @review.user_id %>
+    <%= button_to "Delete", [@bakery, @review], method: :delete,
     data: {confirm: "You Sure?"} %>
   <% end %>
 <% end %>
+
+
+
+<!-- , :url => edit_bakery_review_path(@review) -->
