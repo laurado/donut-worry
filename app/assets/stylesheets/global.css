@@ -1,15 +1,10 @@
-h1 {
-  text-align:center;
-  padding-top: -15px;
-}
-
 .index-image {
   width: 100%;
   height: auto;
 }
 
 .show-image {
-  width: 50%;
+  width: 80%;
   height: auto;
 }
 
