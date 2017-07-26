@@ -54,7 +54,7 @@ class BakeryShowContainer extends Component {
           bakery_id={review.bakery_id}
           user_id={review.user_id}
           rating={review.rating}
-          votes={review.votes}
+          votes={review.total_votes}
           description={review.description}
         />
       )
