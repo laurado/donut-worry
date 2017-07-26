@@ -9,7 +9,8 @@ class BakeryShowContainer extends Component {
       bakery: {},
       reviews: []
     }
-    this.deleteBakery = this.deleteBakery.bind(this)
+    this.deleteBakery = this.deleteBakery.bind(this),
+    this.adminBakeryDelete = this.adminBakeryDelete.bind(this)
   }
 
   componentDidMount() {
@@ -31,9 +32,17 @@ class BakeryShowContainer extends Component {
     })
   }
 
-
+  adminBakeryDelete() {
+    if (current_user.admin === true) {
+      adminDelete =
+      <a href='/bakeries' onClick={this.deleteBakery} >
+        Delete Bakery
+      </a>;
+    }
+  }
 
   render() {
+    let adminBakeryDelete;
     let bakeryId = this.props.params.id
     let reviews = this.state.reviews.map(review => {
       return (
@@ -61,7 +70,7 @@ class BakeryShowContainer extends Component {
             <p>{this.state.bakery.description}</p>
           </div>
         </div>
-
+        <div>{this.adminBakeryDelete}</div>
         <h3>Reviews</h3>
         {reviews}
         <a className="button" href={`/bakeries/${this.props.params.id}/reviews/new`}>Add New Review</a>
@@ -71,13 +80,3 @@ class BakeryShowContainer extends Component {
 }
 
 export default BakeryShowContainer;
-
-
-//
-// <% if current_user.admin? %>
-// <div>
-//   <a href='/bakeries' onClick={this.deleteBakery} >
-//   Delete Bakery
-// </a>
-// </div>
-// <% end %>

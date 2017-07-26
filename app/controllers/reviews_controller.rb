@@ -29,6 +29,7 @@ class ReviewsController < ApplicationController
   def update
     @bakery = Bakery.find(params[:bakery_id])
     @review = Review.find(params[:id])
+    user_email = review.user
     if @review.update(review_params)
       flash[:notice] = "Review successfully updated"
       redirect_to bakery_path(@bakery.id)
