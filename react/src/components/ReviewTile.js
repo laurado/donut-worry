@@ -7,11 +7,6 @@ class ReviewTile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.id,
-      bakery_id: this.props.bakery_id,
-      user_id: this.props.user_id,
-      rating: this.props.rating,
-      description: this.props.description,
       votes: this.props.votes
     }
 
@@ -28,8 +23,7 @@ class ReviewTile extends Component {
     })
     .then(response => response.json())
     .then(responseData => {
-      console.log(responseData)
-      this.setState({ total_votes: responseData.review.total_votes })
+      this.setState({ votes: responseData.review.votes })
     })
   }
 
@@ -42,8 +36,7 @@ class ReviewTile extends Component {
     })
     .then(response => response.json())
     .then(responseData => {
-      console.log(responseData)
-      this.setState({ total_votes: responseData.review.total_votes })
+      this.setState({ votes: responseData.review.votes })
     })
   }
 
@@ -57,7 +50,7 @@ class ReviewTile extends Component {
         </div>
         <h5>Rating: {this.props.rating}</h5>
         <h5>Description: {this.props.description}</h5>
-        <h5>Votes: {this.props.votes}</h5>
+        <h5>Votes: {this.state.votes}</h5>
         <a href={editLink}>Edit Review</a>
       </div>
     )
