@@ -26,7 +26,7 @@ class ReviewTile extends Component {
     .then(response => response.json())
     .then(responseData => {
       this.setState({
-        votes: responseData.review.votes,
+        votes: responseData.review.total_votes,
         upVoteClass: responseData.up_style,
         downVoteClass: responseData.down_style
        })
@@ -43,7 +43,7 @@ class ReviewTile extends Component {
     .then(response => response.json())
     .then(responseData => {
       this.setState({
-        votes: responseData.review.votes,
+        votes: responseData.review.total_votes,
         upVoteClass: responseData.up_style,
         downVoteClass: responseData.down_style
       })
@@ -52,6 +52,7 @@ class ReviewTile extends Component {
 
   render() {
     let editLink = `/bakeries/${this.props.bakery_id}/reviews/${this.props.id}/edit`;
+
     return(
       <div className="callout" id={this.props.id}>
         <div className="row">

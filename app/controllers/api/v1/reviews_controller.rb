@@ -8,7 +8,7 @@ class Api::V1::ReviewsController < ApplicationController
 
     if params["vote"] == "up" && vote.value < 1
       vote.value += 1
-      review.votes += 1
+      review.total_votes += 1
       vote.save!
       review.save!
       ReviewMailer.review_email(user_email).deliver
@@ -36,7 +36,7 @@ class Api::V1::ReviewsController < ApplicationController
 
     elsif params["vote"] == "down" && vote.value > -1
       vote.value -= 1
-      review.votes -= 1
+      review.total_votes -= 1
       vote.save!
       review.save!
       ReviewMailer.review_email(user_email).deliver
