@@ -1,10 +1,10 @@
 class BakeriesController < ApplicationController
   def index
-    @bakeries = Bakery.all
+    @bakeries =
     if params[:search]
-      @bakeries = Bakery.search(params[:search]).order("created_at DESC")
+      Bakery.search(params[:search]).order("created_at DESC")
     else
-      @bakeries = Bakery.all.order("created_at DESC")
+      Bakery.all.order("created_at ASC")
     end
   end
 
