@@ -4,29 +4,6 @@
 
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 <h1>Donut Worry</h1>
 <h2>A review site for those who go nuts for donuts</h2>
 <h5>Contributors</h5>
@@ -38,7 +15,7 @@ Things you may want to cover:
 </ul>
 
 <h5>Introduction</h5>
-<p>Donut Worry is Launch Academy's premier destination for sharing and reviewing breakfast confections of all shapes and sizes.</p>
+<p>Donut Worry is Launch Academy's premier destination for sharing and reviewing breakfast confectionaries of all shapes and sizes.</p>
 
 <h5>Features</h5>
 <ul>
@@ -64,7 +41,7 @@ Things you may want to cover:
 <li>Image Hosting: Amazon Web Services</li>
 <li>Styling: Foundation</li>
 <li>Database: Postgres</li>
-<li>Testing: RSpec, Capybara, Jasmine</li>
+<li>Testing: RSpec, Capybara, Jasmine, Karma, Enzyme</li>
 </ul>
 
 <h5>To run this app on your local machine</h5>
@@ -77,3 +54,5 @@ Things you may want to cover:
 <li>In another terminal window, run  `npm start`</li>
 <li>Visit <a href='http://localhost:3000/'>http://localhost:3000/</a> in your browser.</li>
 </ul>
+
+<![ER diagram](nomnoml.png) />
