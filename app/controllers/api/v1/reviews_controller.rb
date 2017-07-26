@@ -1,10 +1,7 @@
 class Api::V1::ReviewsController < ApplicationController
-  # protect_from_forgery unless: -> { request.format.json? }
-  skip_before_action :verify_authenticity_token,
-    only: [:update]
+  skip_before_action :verify_authenticity_token, only: [:update]
 
   def update
-
     review = Review.find(params[:id])
     vote = Vote.find_or_create_by(user: current_user, review: review)
 
