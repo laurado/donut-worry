@@ -35,7 +35,7 @@ RSpec.describe Api::V1::BakeriesController, type: :controller do
       rating: 5,
       description: "This is the best bakery, trust me. We win sooo many"\
       " donuts. It's yuge.",
-      votes: 1,
+      total_votes: 1,
       bakery: first_bakery,
       user: first_user
     )
@@ -45,7 +45,7 @@ RSpec.describe Api::V1::BakeriesController, type: :controller do
     Review.create(
       rating: 1,
       description: "This bakery is very low-energy. SAD!",
-      votes: 5,
+      total_votes: 5,
       bakery: first_bakery,
       user: second_user
     )

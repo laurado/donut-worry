@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Upvote extends Component {
   constructor(props) {
     super(props);
-
+    
     this.handleUpvoteSubmit = this.handleUpvoteSubmit.bind(this)
   }
 
@@ -15,7 +15,7 @@ class Upvote extends Component {
   render() {
     return(
       <form onSubmit={this.handleUpvoteSubmit}>
-        <button className="button" type="submit"> ʌ </button>
+        <button className={`button ${this.props.style}`} type="submit"> ʌ </button>
       </form>
     );
   }

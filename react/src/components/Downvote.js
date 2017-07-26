@@ -15,7 +15,7 @@ class Downvote extends Component {
   render() {
     return(
       <form onSubmit={this.handleDownvoteSubmit}>
-        <button className="button" type="submit"> v </button>
+        <button className={`button ${this.props.style}`} type="submit"> v </button>
       </form>
     );
   }
