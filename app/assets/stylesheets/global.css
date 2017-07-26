@@ -53,3 +53,11 @@
 .backbutton {
   margin: 30px 0 50px 0;
 }
+
+button.button.green {
+  background-color: green;
+}
+
+button.button.red {
+  background-color: red;
+}
