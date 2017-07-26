@@ -44,7 +44,6 @@ class BakeryShowContainer extends Component {
   }
 
   render() {
-    debugger;
     let adminBakeryDelete;
     let bakeryId = this.props.params.id
     let reviews = this.state.reviews.map(review => {
