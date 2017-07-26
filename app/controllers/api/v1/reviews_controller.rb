@@ -4,12 +4,14 @@ class Api::V1::ReviewsController < ApplicationController
   def update
     review = Review.find(params[:id])
     vote = Vote.find_or_create_by(user: current_user, review: review)
+    user_email = review.user
 
     if params["vote"] == "up" && vote.value < 1
       vote.value += 1
       review.votes += 1
       vote.save!
       review.save!
+      ReviewMailer.review_email(user_email).deliver
 
       up_style = nil
       down_style = nil
@@ -37,6 +39,7 @@ class Api::V1::ReviewsController < ApplicationController
       review.votes -= 1
       vote.save!
       review.save!
+      ReviewMailer.review_email(user_email).deliver
 
       up_style = nil
       down_style = nil
