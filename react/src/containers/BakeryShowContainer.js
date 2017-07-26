@@ -51,15 +51,20 @@ class BakeryShowContainer extends Component {
 
     return (
       <div>
-        <hr></hr>
-        <h1>{this.state.bakery.name}</h1>
-        <img className='show-image' src={this.state.bakery.img_url} alt={this.state.bakery.name}></img>
-        <h5>{this.state.bakery.address}, {this.state.bakery.city} {this.state.bakery.state}, {this.state.bakery.zip}</h5>
-        <p>{this.state.bakery.description}</p>
+        <div className="row bakery-description">
+          <div className="columns small-4">
+            <img className='show-image' src={this.state.bakery.img_url} alt={this.state.bakery.name}></img>
+          </div>
+          <div className="columns small-8">
+            <h1>{this.state.bakery.name}</h1>
+            <h5>{this.state.bakery.address}, {this.state.bakery.city} {this.state.bakery.state}, {this.state.bakery.zip}</h5>
+            <p>{this.state.bakery.description}</p>
+          </div>
+        </div>
 
         <h3>Reviews</h3>
         {reviews}
-        <a href={`/bakeries/${this.props.params.id}/reviews/new`}>Add New Review</a>
+        <a className="button" href={`/bakeries/${this.props.params.id}/reviews/new`}>Add New Review</a>
       </div>
     )
   }
