@@ -22,7 +22,7 @@ feature "Authenticated users can delete their account" do
 
     expect(page).to have_content "Edit User"
 
-    click_button "Cancel my account"
+    click_link "Cancel my account"
 
     expect(page).to have_content "Your account has been successfully cancelled."
     expect(page).to have_content "Donut Worry"

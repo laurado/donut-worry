@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Upvote extends Component {
   constructor(props) {
@@ -6,16 +6,19 @@ class Upvote extends Component {
 
     this.handleUpvoteSubmit = this.handleUpvoteSubmit.bind(this)
   }
+
   handleUpvoteSubmit(event){
     event.preventDefault()
     this.props.handleClick(this.props.review);
   }
-  render {
+
+  render() {
     return(
       <form onSubmit={this.handleUpvoteSubmit}>
-        <button className='button' type='submit'> <i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i> </button>
+        <button className="button" type="submit"> ʌ </button>
       </form>
     );
   }
 }
+
 export default Upvote;

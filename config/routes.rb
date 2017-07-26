@@ -1,21 +1,21 @@
 Rails.application.routes.draw do
-  devise_for :users
-
-  root 'static_pages#index'
-  resources :users
-
-  resources :bakeries, only: [:index, :show] do
-    resources :reviews, only: [:index, :edit, :destroy]
+  resources :bakeries, only: [:index, :show, :new, :create] do
+    resources :reviews
   end
 
   namespace :api do
     namespace :v1 do
+      resources :reviews, only: [:update]
+      resources :bakeries, only: [:index]
 
-      resources :bakeries, only: [:index, :edit, :destroy]
-
-      resources :bakeries, only: [:show, :edit, :destroy] do
-        resources :reviews, only: [:index, :edit, :destroy]
+      resources :bakeries, only: [:show] do
+        resources :reviews
       end
     end
   end
+
+  patch 'bakeries/:bakery_id/reviews/:id/edit', controller: 'reviews', action: :update
+
+  devise_for :users
+  root 'static_pages#index'
 end
