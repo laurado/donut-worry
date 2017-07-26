@@ -1,6 +1,7 @@
 class Review < ApplicationRecord
   belongs_to :bakery
   belongs_to :user
+  has_many :votes
 
   validates :rating,
     presence: true,
