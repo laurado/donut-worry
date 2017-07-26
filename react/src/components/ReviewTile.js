@@ -44,14 +44,20 @@ class ReviewTile extends Component {
     let editLink = `/bakeries/${this.props.bakery_id}/reviews/${this.props.id}/edit`;
     return(
       <div className="callout" id={this.props.id}>
-        <div className="upvote-downvote">
-          <Upvote review={this.props.review} handleClick={this.handleUpvoteClick}/>
-          <Downvote review={this.props.review} handleClick={this.handleDownVoteClick}/>
+        <div className="row">
+          <div className="columns small-2">
+            <div className="upvote-downvote">
+              <Upvote review={this.props.review} handleClick={this.handleUpvoteClick}/>
+              <Downvote review={this.props.review} handleClick={this.handleDownVoteClick}/>
+            </div>
+            <a href={editLink}>Edit Review</a>
+          </div>
+          <div className="columns small-10">
+            <h5>Rating: {this.props.rating}</h5>
+            <h5>Description: {this.props.description}</h5>
+            <h5>Votes: {this.state.votes}</h5>
+          </div>
         </div>
-        <h5>Rating: {this.props.rating}</h5>
-        <h5>Description: {this.props.description}</h5>
-        <h5>Votes: {this.state.votes}</h5>
-        <a href={editLink}>Edit Review</a>
       </div>
     )
   }
