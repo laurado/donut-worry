@@ -1,7 +1,7 @@
 class ReviewMailer < ApplicationMailer
   default from: 'notifications@donut-worry.com'
 
-  def new_review(user)
+  def review_email(user)
     @user = user
     @url = 'http://donut-worry.com/bakeries'
 

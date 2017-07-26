@@ -15,7 +15,9 @@ class BakeryShowContainer extends Component {
 
   componentDidMount() {
     let bakeryId = this.props.params.id
-    fetch(`/api/v1/bakeries/${bakeryId}`)
+    fetch(`/api/v1/bakeries/${bakeryId}`, {
+      credentials: 'same-origin'
+    })
     .then(response => response.json())
     .then(body => {
       this.setState({
@@ -42,6 +44,7 @@ class BakeryShowContainer extends Component {
   }
 
   render() {
+    debugger;
     let adminBakeryDelete;
     let bakeryId = this.props.params.id
     let reviews = this.state.reviews.map(review => {
