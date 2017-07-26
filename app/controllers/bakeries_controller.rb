@@ -1,5 +1,12 @@
 class BakeriesController < ApplicationController
-  def index; end
+  def index
+    @bakeries = Bakery.all
+    if params[:search]
+      @bakeries = Bakery.search(params[:search]).order("created_at DESC")
+    else
+      @bakeries = Bakery.all.order("created_at DESC")
+    end
+  end
 
   def show
     @bakery = Bakery.find(params[:id])
