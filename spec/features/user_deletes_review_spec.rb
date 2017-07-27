@@ -46,7 +46,7 @@ feature "authenticated users can add reviews" do
       union_square_donuts.reviews[0]
     )
 
-    find_button("Delete").visible?
+    find_link("Delete").visible?
 
   end
 end
