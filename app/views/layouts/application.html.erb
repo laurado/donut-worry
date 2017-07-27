@@ -4,10 +4,10 @@
     <title>Donut Worry</title>
     <%= csrf_meta_tags %>
 
-    <%= javascript_include_tag 'application' %>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css">
+    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
 
   <body>
@@ -42,11 +42,13 @@
       </div>
     </div>
 
-    <% flash.each do |key, value| %>
+    <div class="header">
+      <% flash.each do |key, value| %>
       <div class=“alert alert-<%= key %>“><%= value %></div>
-    <% end %>
+      <% end %>
+      <%= image_tag("Donut_Worry.png", :class => "logo") %>
+    </div>
 
-    <%= image_tag("Donut_Worry.png", :class => "logo") %>
 
     <div class='row'>
       <%= yield %>

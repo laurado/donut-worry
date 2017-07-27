@@ -1,29 +1,26 @@
-<% if (!current_user && !current_user.admin?) %>
-   <h2>You can't edit reviews you didn't write!</h2>
-<% else %>
-  <h2>Edit Review for <%= @bakery.name %></h2>
-  <%= link_to "Back to Bakery", bakery_path(@bakery) %>
+<div class="callout">
+  <% if (!current_user && !current_user.admin?) %>
+     <h2>You can't edit reviews you didn't write!</h2>
+  <% else %>
+    <h2>Edit Review for <%= @bakery.name %></h2>
 
-  <%= form_for [@bakery, @review], :url => edit_bakery_review_path(@bakery, @review) do |f| %>
+    <%= form_for [@bakery, @review], :url => edit_bakery_review_path(@bakery, @review) do |f| %>
 
-    <%= f.label :rating, "Rating" %>
-    <%= f.text_field :rating %>
-    <br /><br />
+      <%= f.label :rating, "Rating" %>
+      <%= f.text_field :rating %>
 
-    <%= f.label :description, "Description" %>
-    <%= f.text_area :description %>
-    <br /><br />
-    <%= f.submit "Update Review" %>
+      <%= f.label :description, "Description" %>
+      <%= f.text_area :description %>
+      <%= f.submit "Update Review" %>
 
-<% end %>
-
-  <% if (current_user && current_user.admin?) ||
-    current_user.id == @review.user_id %>
-    <%= button_to "Delete", [@bakery, @review], method: :delete,
-    data: {confirm: "You Sure?"} %>
   <% end %>
-<% end %>
 
+    <% if (current_user && current_user.admin?) ||
+      current_user.id == @review.user_id %>
+      <br /><%= link_to "Delete", [@bakery, @review], method: :delete,
+      data: {confirm: "You Sure?"} %>
+    <% end %>
+  <% end %>
 
-
-<!-- , :url => edit_bakery_review_path(@review) -->
+  <br /><%= link_to "Back to Bakery", bakery_path(@bakery) %>
+</div>

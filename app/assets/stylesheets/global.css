@@ -61,3 +61,31 @@ button.button.green {
 button.button.red {
   background-color: red;
 }
+
+body {
+  background-image: url("https://slack-imgs.com/?c=1&url=https%3A%2F%2Fs-media-cache-ak0.pinimg.com%2Foriginals%2F12%2F05%2F43%2F120543b02f6ddb9d8745e84eb5e16315.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  background-color: white;
+  opacity: 0.75;
+  margin-bottom: 50px;
+}
+
+ul.menu {
+  background-color: #333333;
+}
+
+.menu .menu-text {
+  color: deeppink;
+}
+
+a {
+  color: deeppink;
+}
+
+.callout {
+  opacity: 0.95;
+}
