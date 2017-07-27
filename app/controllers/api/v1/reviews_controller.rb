@@ -4,14 +4,12 @@ class Api::V1::ReviewsController < ApplicationController
   def update
     review = Review.find(params[:id])
     vote = Vote.find_or_create_by(user: current_user, review: review)
-    user_email = review.user
 
     if params["vote"] == "up" && vote.value < 1
       vote.value += 1
       review.total_votes += 1
       vote.save!
       review.save!
-      ReviewMailer.review_email(user_email).deliver
 
       render json: {
         status: 201,
@@ -24,7 +22,6 @@ class Api::V1::ReviewsController < ApplicationController
       review.total_votes -= 1
       vote.save!
       review.save!
-      ReviewMailer.review_email(user_email).deliver
 
       render json: {
         status: 201,
