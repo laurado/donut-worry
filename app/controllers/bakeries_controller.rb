@@ -1,5 +1,16 @@
 class BakeriesController < ApplicationController
-  def index; end
+  def index
+    if valid_search_params
+      @bakery = Bakery.search(params[:search]).order("created_at DESC").first
+      if @bakery
+        redirect_to bakery_path(@bakery)
+      else
+        flash[:notice] = "No results found for '#{params[:search]}'"
+        @bakeries = Bakery.all.order("created_at ASC")
+        redirect_to root_path
+      end
+    end
+  end
 
   def show
     @bakery = Bakery.find(params[:id])
@@ -34,5 +45,12 @@ class BakeriesController < ApplicationController
       :description,
       :img_url
     )
+  end
+
+  def valid_search_params
+    params[:search] &&
+      params[:search] != "" &&
+      params[:search] != " " &&
+      params[:search].length > 1
   end
 end
