@@ -49,8 +49,8 @@ class BakeriesController < ApplicationController
 
   def valid_search_params
     params[:search] &&
-    params[:search] != "" &&
-    params[:search] != " " &&
-    params[:search].length > 1
+      params[:search] != "" &&
+      params[:search] != " " &&
+      params[:search].length > 1
   end
 end
