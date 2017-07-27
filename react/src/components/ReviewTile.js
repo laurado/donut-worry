@@ -7,9 +7,7 @@ class ReviewTile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      votes: this.props.votes,
-      upVoteClass: '',
-      downVoteClass: ''
+      votes: this.props.votes
     }
 
     this.handleUpvoteClick = this.handleUpvoteClick.bind(this);
@@ -26,9 +24,7 @@ class ReviewTile extends Component {
     .then(response => response.json())
     .then(responseData => {
       this.setState({
-        votes: responseData.review.total_votes,
-        upVoteClass: responseData.up_style,
-        downVoteClass: responseData.down_style
+        votes: responseData.review.total_votes
        })
     })
   }
@@ -43,9 +39,7 @@ class ReviewTile extends Component {
     .then(response => response.json())
     .then(responseData => {
       this.setState({
-        votes: responseData.review.total_votes,
-        upVoteClass: responseData.up_style,
-        downVoteClass: responseData.down_style
+        votes: responseData.review.total_votes
       })
     })
   }
@@ -58,8 +52,8 @@ class ReviewTile extends Component {
         <div className="row">
           <div className="columns small-2">
             <div className="upvote-downvote">
-              <Upvote style={this.state.upVoteClass} review={this.props.review} handleClick={this.handleUpvoteClick}/>
-              <Downvote style={this.state.downVoteClass} review={this.props.review} handleClick={this.handleDownVoteClick}/>
+              <Upvote review={this.props.review} handleClick={this.handleUpvoteClick}/>
+              <Downvote review={this.props.review} handleClick={this.handleDownVoteClick}/>
             </div>
             <a href={editLink}>Edit Review</a>
           </div>
