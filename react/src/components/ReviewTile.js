@@ -14,12 +14,11 @@ class ReviewTile extends Component {
     this.handleDownVoteClick = this.handleDownVoteClick.bind(this);
   }
 
-  handleUpvoteClick(payload){
+  handleUpvoteClick(){
     fetch(`/api/v1/reviews/${this.props.id}?vote=up`, {
       credentials: 'same-origin',
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: payload
+      headers: { 'Content-Type': 'application/json' }
     })
     .then(response => response.json())
     .then(responseData => {
@@ -29,12 +28,11 @@ class ReviewTile extends Component {
     })
   }
 
-  handleDownVoteClick(payload){
+  handleDownVoteClick(){
     fetch(`/api/v1/reviews/${this.props.id}?vote=down`, {
       credentials: 'same-origin',
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: payload
+      headers: { 'Content-Type': 'application/json' }
     })
     .then(response => response.json())
     .then(responseData => {
@@ -52,8 +50,8 @@ class ReviewTile extends Component {
         <div className="row">
           <div className="columns small-2">
             <div className="upvote-downvote">
-              <Upvote review={this.props.review} handleClick={this.handleUpvoteClick}/>
-              <Downvote review={this.props.review} handleClick={this.handleDownVoteClick}/>
+              <Upvote handleClick={this.handleUpvoteClick}/>
+              <Downvote handleClick={this.handleDownVoteClick}/>
             </div>
             <a href={editLink}>Edit Review</a>
           </div>
