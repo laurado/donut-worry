@@ -18,6 +18,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "New review was successfully created."
       redirect_to bakery_path(@bakery)
     else
+      # redirect_to new_bakery_review_path(@bakery)
       render :new
     end
   end

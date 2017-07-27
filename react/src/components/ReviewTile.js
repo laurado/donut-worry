@@ -42,7 +42,6 @@ class ReviewTile extends Component {
     })
     .then(response => response.json())
     .then(responseData => {
-      debugger;
       this.setState({
         votes: responseData.review.total_votes,
         upVoteClass: responseData.up_style,
