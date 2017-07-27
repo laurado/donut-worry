@@ -15,8 +15,10 @@ class ReviewsController < ApplicationController
     @review.user = current_user
 
     if @review.save
-      redirect_to bakery_path(@bakery), notice: 'New review was successfully created.'
+      flash[:notice] = "New review was successfully created."
+      redirect_to bakery_path(@bakery)
     else
+      # redirect_to new_bakery_review_path(@bakery)
       render :new
     end
   end
