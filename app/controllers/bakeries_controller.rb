@@ -1,10 +1,14 @@
 class BakeriesController < ApplicationController
   def index
-    @bakeries =
-    if params[:search]
-      Bakery.search(params[:search]).order("created_at DESC")
-    else
-      Bakery.all.order("created_at ASC")
+    if valid_search_params
+      @bakery = Bakery.search(params[:search]).order("created_at DESC").first
+      if @bakery
+        redirect_to bakery_path(@bakery)
+      else
+        @bakeries = Bakery.all.order("created_at ASC")
+        redirect_to root_path
+        # flash[:alert] = `There are no bakeries containing ${params[:search]}`
+      end
     end
   end
 
@@ -41,5 +45,12 @@ class BakeriesController < ApplicationController
       :description,
       :img_url
     )
+  end
+
+  def valid_search_params
+    params[:search] &&
+    params[:search] != "" &&
+    params[:search] != " " &&
+    params[:search].length > 1
   end
 end

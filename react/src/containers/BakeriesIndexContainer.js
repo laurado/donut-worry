@@ -7,7 +7,7 @@ class BakeriesIndexContainer extends Component {
     this.state = {
       bakeries: []
     }
-    this.addNewBakery = this.addNewBakery.bind(this)
+    this.addNewBakery = this.addNewBakery.bind(this);
   }
 
   componentDidMount() {
