@@ -31,7 +31,7 @@ class Api::V1::ReviewsController < ApplicationController
         message: "successfully voted on a review",
         review: review
       }.to_json
-      
+
     else
       render json: {
         status: 500,
