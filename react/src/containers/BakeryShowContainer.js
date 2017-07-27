@@ -66,14 +66,14 @@ class BakeryShowContainer extends Component {
           <div className="columns small-4">
             <img className='show-image' src={this.state.bakery.img_url} alt={this.state.bakery.name}></img>
           </div>
-          <div className="columns small-8">
-            <h1>{this.state.bakery.name}</h1>
-            <h5>{this.state.bakery.address}, {this.state.bakery.city} {this.state.bakery.state}, {this.state.bakery.zip}</h5>
-            <p>{this.state.bakery.description}</p>
+
+          <div className="columns small-8 callout">
+              <h1>{this.state.bakery.name}</h1>
+              <h5>{this.state.bakery.address}, {this.state.bakery.city} {this.state.bakery.state}, {this.state.bakery.zip}</h5>
+              <p>{this.state.bakery.description}</p>
           </div>
         </div>
         <div>{this.adminBakeryDelete}</div>
-        <h3>Reviews</h3>
         {reviews}
         <a className="button" href={`/bakeries/${this.props.params.id}/reviews/new`}>Add New Review</a>
       </div>
