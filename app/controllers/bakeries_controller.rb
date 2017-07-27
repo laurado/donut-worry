@@ -5,9 +5,9 @@ class BakeriesController < ApplicationController
       if @bakery
         redirect_to bakery_path(@bakery)
       else
+        flash[:notice] = "No results found for '#{params[:search]}'"
         @bakeries = Bakery.all.order("created_at ASC")
         redirect_to root_path
-        # flash[:alert] = `There are no bakeries containing ${params[:search]}`
       end
     end
   end
