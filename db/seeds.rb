@@ -1,4 +1,4 @@
-user1 = User.create(
+User.create(
   first_name: "Patrick",
   last_name: "Farley",
   email: "patrick.dennis.farley@gmail.com",
@@ -8,7 +8,7 @@ user1 = User.create(
   admin: true
 )
 
-user2 = User.create(
+User.create(
   first_name: "Laura",
   last_name: "Do",
   email: "misslaurado@yahoo.com",
@@ -18,7 +18,7 @@ user2 = User.create(
   admin: true
 )
 
-user3 = User.create(
+User.create(
   first_name: "Jess",
   last_name: "Titus",
   email: "jtitus1195@gmail.com",
@@ -28,7 +28,7 @@ user3 = User.create(
   admin: true
 )
 
-user4 = User.create(
+User.create(
   first_name: "Colin",
   last_name: "Serafino",
   email: "cserafino66@gmail.com",
@@ -37,8 +37,6 @@ user4 = User.create(
   profile_photo: "https://www.metal-archives.com/images/7/2/72_logo.png?1348",
   admin: true
 )
-
-
 
 # bakery1 = Bakery.create(
 #   name: "Union Square Donuts",
