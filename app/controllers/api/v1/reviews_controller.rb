@@ -6,8 +6,6 @@ class Api::V1::ReviewsController < ApplicationController
     vote = Vote.find_or_create_by(user: current_user, review: review)
     user_email = review.user
 
-    binding.pry
-
     if params["vote"] == "up" && vote.value < 1
       vote.value += 1
       review.total_votes += 1
