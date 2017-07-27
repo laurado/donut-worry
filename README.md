@@ -11,7 +11,7 @@
   <li><a href="https://github.com/PatrickDennisFarley">Patrick Farley</a></li>
   <li><a href="https://github.com/laurado">Laura Do</a></li>
   <li><a href="https://github.com/cserafino66">Colin Serafino</a></li>
-  <li><a href="https://github.com/jessicatitus">Jess Titus</a></li>
+  <li><a href="https://github.com/jessicatitus">Jessica Titus</a></li>
 </ul>
 
 <h5>Introduction</h5>
@@ -55,4 +55,4 @@
 <li>Visit <a href='http://localhost:3000/'>http://localhost:3000/</a> in your browser.</li>
 </ul>
 
-<![ER diagram](nomnoml.png) />
+![ER diagram](nomnoml.png) 
