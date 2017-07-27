@@ -1,6 +1,7 @@
 .index-image {
   width: 100%;
   height: auto;
+  padding-top: 10px;
 }
 
 .show-image {
@@ -88,4 +89,13 @@ a {
 
 .callout {
   opacity: 0.95;
+}
+
+h5, p {
+  font-family: 'Kite One', serif;
+}
+
+h3, h1 {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 500;
 }
